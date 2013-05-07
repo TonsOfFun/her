@@ -19,7 +19,7 @@ module Her
         # @param [Hash] data
         # @private
         def parse(data)
-          parse_root_in_json? && data.class != Array ? data[parsed_root_element] : data
+          parse_root_in_json? && data.is_a?(Hash) ? data[parsed_root_element] : data
         end
 
         # @private
